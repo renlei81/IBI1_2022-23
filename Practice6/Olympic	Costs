@@ -1,0 +1,30 @@
+#import numpy and matplotlib
+#create a dict and add values and keys 
+#use sorted fuction to sort the values and print it
+#use matplotlib to create a bar chart with determined ind width
+#add y label xtick,ytick,
+#show the bar chart
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+game_costs= {'Los_Angeles_1984': 1,
+            'Seoul_1988':8,
+            'Barcelona_1992':15,
+            'Atlanta_1996': 7,
+            'Sydney_2000':5,
+            'Athens_2003': 14,
+            'Beijing_2008':43,
+            'London_2012':40}
+costs = game_costs.values()
+print(sorted(costs))
+N = 8
+ind = np.arange(N)
+width = 0.34
+
+plt.bar(ind,costs,width)
+plt.ylabel('costs')
+plt.title('Olympic_games\' costs')
+plt.xticks(ind,game_costs.keys())
+plt.yticks(np.arange(0,45,5))
+plt.show()
