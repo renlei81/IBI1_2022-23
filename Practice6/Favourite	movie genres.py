@@ -15,11 +15,11 @@ movie_genre =  {'comedy':73,
                 'documentary': 12, 
                 'history': 8, 
                 'war': 7}
-
+# make a dict to contain movie genre and the numbers
 print(movie_genre)
 plt.pie(movie_genre.values(), labels=movie_genre.keys(),autopct='%1.1f%%')
 plt.title('Movie Genre')
-plt.show()
+plt.show()#show the picture
 print(movie_genre)
 genre = comedy # you can change the key to 
 print(movie_genre[genre])#output the number of the people
