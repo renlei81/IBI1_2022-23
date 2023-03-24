@@ -17,7 +17,7 @@ game_costs= {'Los_Angeles_1984': 1,
             'Beijing_2008':43,
             'London_2012':40}
 costs = game_costs.values()
-print(sorted(costs))
+print(sorted(costs))#sort the values
 N = 8
 ind = np.arange(N)
 width = 0.34
