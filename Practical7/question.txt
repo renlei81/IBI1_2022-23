@@ -1,0 +1,3 @@
+How have new cases and total cases developed over time in Brazil?
+answer begins in the line 36
+in the plot we can see that the total cases increased significantly. and the new deaths increased slower.
