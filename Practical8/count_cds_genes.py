@@ -11,12 +11,12 @@ for line in input_file:
     line = line.strip() #get the text in the file
     if line.startswith('>'): #judge if the line starts with >, which suggests that it is a line that contains the name
         if find_sequence.endswith(f'{stop_codon}'): # judge if the line ends with the input stop_codon
-            output_file.write(f">{find_gene} {len(find_sequence)}\n{find_sequence}\n")
+            output_file.write(f">{find_gene} {len(re.findall(f'{stop_codon}',find_sequence))}\n{find_sequence}\n")#the name, numbers of input stop codon, and the sequence matched
         find_gene = line[1:].split(' ')[0] #split the things by space
         find_sequence = ''
     else:
         find_sequence += line
         
 if find_sequence.endswith(f'{stop_codon}'):
-    output_file.write(f">{find_gene} {len(find_sequence)}\n{find_sequence}\n")#find the last line
+    output_file.write(f">{find_gene} {len(re.findall(f'{stop_codon}',find_sequence))}\n{find_sequence}\n")#find the last line
 
