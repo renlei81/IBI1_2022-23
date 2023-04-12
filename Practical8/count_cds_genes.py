@@ -18,5 +18,5 @@ for line in input_file:
         find_sequence += line
         
 if find_sequence.endswith(f'{stop_codon}'):
-    output_file.write(f">{find_gene} {len(find_sequence)}\n{find_sequence}\n")
-#find the last line
+    output_file.write(f">{find_gene} {len(find_sequence)}\n{find_sequence}\n")#find the last line
+
