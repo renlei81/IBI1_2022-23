@@ -9,7 +9,7 @@ def is_protein_coding(dna_sequence):
     if start_index == -1 or stop_index == -1:
         return 0, 'unclear'
 
-    coding_length = stop_index - start_index + len(stop_codon)
+    coding_length = stop_index - start_index + len(stop_codon)# the lenght of the coding part
     coding_percentage = coding_length / total_length
 
     if coding_percentage > 0.5:
