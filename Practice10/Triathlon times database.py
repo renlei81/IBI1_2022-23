@@ -1,5 +1,5 @@
 class triathlon():
-    def __init__(self, first_name, last_name, location, swim_time, cycle_time, run_time):
+    def __init__(self, first_name, last_name, location, swim_time, cycle_time, run_time): # make an iterator in the class to define the arguments
         self.first_name = first_name
         self.last_name = last_name
         self.location = location
@@ -8,7 +8,7 @@ class triathlon():
         self.run_time = run_time
         self.total_time = swim_time + cycle_time + run_time
 
-    def print_details(self):
+    def print_details(self):#print the arguments with the description in one line
         print(f"{self.first_name} {self.last_name} competed in a triathlon at {self.location}.",end = ' ')
         print(f"Swim time: {self.swim_time}",end = ' ')
         print(f"Cycle time: {self.cycle_time}",end = ' ')
