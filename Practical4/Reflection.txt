@@ -1,1 +1,3 @@
-In the week4 IBI class I learnt that how to use git.
+During the practical I learnt about how to make use git to work with te files. Although at first I had some trubles, but I made it to tackle with them.
+The tasks are challenging at first, but after I made it to get used to it , it became easier.
+My question is that what should we study in the future so that we could use the git and github more efficiently?
