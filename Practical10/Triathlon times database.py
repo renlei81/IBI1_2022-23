@@ -1,20 +1,20 @@
-def is_protein_coding(dna_sequence):
-    dna_sequence = dna_sequence.upper()
-    start_codon = 'ATG'
-    stop_codon = 'TGA'
-    total_length = len(dna_sequence) #store the length of the DNA
-    start_index = dna_sequence.find(start_codon)
-    stop_index = dna_sequence.rfind(stop_codon)
+class triathlon():
+    def __init__(self, first_name, last_name, location, swim_time, cycle_time, run_time): # make an iterator in the class to define the arguments
+        self.first_name = first_name
+        self.last_name = last_name
+        self.location = location
+        self.swim_time = swim_time
+        self.cycle_time = cycle_time
+        self.run_time = run_time
+        self.total_time = swim_time + cycle_time + run_time
 
-    if start_index == -1 or stop_index == -1:#judge if there are the stop or start factors
-        return 0, 'unclear'
-
-    coding_length = stop_index - start_index + len(stop_codon)# the length of the coding sequence in the dna
-    coding_percentage = coding_length / total_length
-
-    if coding_percentage > 0.5: # calculate the percentage
-        return coding_percentage * 100, 'protein-coding'
-    elif coding_percentage < 0.1:
-        return coding_percentage * 100, 'non-coding'
-    else:
-        return coding_percentage * 100, 'unclear'
+    def print_details(self):#print the arguments with the description in one line
+        print(f"{self.first_name} {self.last_name} competed in a triathlon at {self.location}.",end = ' ')
+        print(f"Swim time: {self.swim_time}",end = ' ')
+        print(f"Cycle time: {self.cycle_time}",end = ' ')
+        print(f"Run time: {self.run_time}",end = ' ')
+        print(f"Total time: {self.total_time}",end = ' ')
+        
+# Example usage:
+triathlete = triathlon("Harry", "Paul", "Haining", 10.5, 20.2, 30.1)
+triathlete.print_details()
