@@ -4,8 +4,9 @@ def protein_coding(dna_sequence):
     start_codon = r'ATG'
     stop_codon = r'TGA'
     total_length = len(dna_sequence) #store the length of the DNA
-    start_index = dna_sequence.find(start_codon,re.I)
-    stop_index = dna_sequence.rfind(stop_codon,re.I)
+    start_index = dna_sequence.find(start_codon,re.I)#find start codon in the dna sequence
+    stop_index = dna_sequence.rfind(stop_codon,re.I)#find stop codon in the dna sequence
+    # re.I is to recognize both upper and lower cases
 
     if start_index == -1 or stop_index == -1:#judge if there are the stop or start factors
         return 0, 'unclear'
@@ -21,3 +22,4 @@ def protein_coding(dna_sequence):
         return f'{coding_percentage}%', 'unclear'
     
 print(protein_coding('aaaaatGaaaatGAa')) 
+# ('66.66666666666667%', 'protein-coding')
