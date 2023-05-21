@@ -30,7 +30,7 @@ plt.ylabel('Number of Cases')
 plt.title("New Cases and New Deaths on 31 March 2020")
 plt.show()
 
-
+# answer to the question
 world_dates = covid_data.loc[:,'date']
 world_new_cases = covid_data.loc[:,'new_cases']
 world_new_deaths = covid_data.loc[:,'new_deaths']
@@ -53,7 +53,7 @@ for i in covid_data.loc[:,'location']:
 bra_dates = covid_data.loc[Brazil,'date']
 bra_new_cases = covid_data.loc[Brazil,'new_cases']
 bra_total_cases = covid_data.loc[Brazil,'total_cases']
-plt.plot(bra_dates,bra_total_cases,'bo',bra_dates,bra_new_cases,'ro')
+
 plt.plot(bra_dates,bra_new_cases,'b-',label='New Cases')
 plt.plot(bra_dates, bra_total_cases, 'r-',label='Total Cases')
 plt.xticks(bra_dates.iloc[0:len(bra_dates):3],rotation=-90)
