@@ -12,12 +12,12 @@ print(covid_data.iloc[0:1001:100,1])
 afg = []
 for i in covid_data.loc[:,'location']:
         afg.append(i == 'Afghanistan')
-print('Boolean:', covid_data.loc[afg,'total_cases'])
+print('Boolean:', afg)
+print(covid_data.loc[afg,'total_cases'])
 # the mean numbers of new cases and new deaths on 31 March 2020
 date3_31 = []
 for i in covid_data.loc[:,'date']:
-    date3_31.append(i == '2020-03-21')
-new_date = covid_data.loc[date3_31,'date']
+    date3_31.append(i == '2020-03-31')
 nc331 = covid_data.loc[date3_31,'new_cases']
 nd331 = covid_data.loc[date3_31,'new_deaths']
 nc_mean = np.mean(nc331)
@@ -30,10 +30,10 @@ plt.ylabel('Number of Cases')
 plt.title("New Cases and New Deaths on 31 March 2020")
 plt.show()
 
-# answer to the question
-world_dates = covid_data.loc[:,'date']
-world_new_cases = covid_data.loc[:,'new_cases']
-world_new_deaths = covid_data.loc[:,'new_deaths']
+world_data = covid_data[covid_data['location'] == 'World']
+world_dates = world_data.loc[:,'date']
+world_new_cases = world_data.loc[:,'new_cases']
+world_new_deaths = world_data.loc[:,'new_deaths']
 plt.figure(figsize=(10,8))
 plt.plot(world_dates, world_new_cases, 'b-',label='New Cases')
 plt.plot(world_dates, world_new_deaths, 'r-',label='New Deaths')
@@ -53,7 +53,6 @@ for i in covid_data.loc[:,'location']:
 bra_dates = covid_data.loc[Brazil,'date']
 bra_new_cases = covid_data.loc[Brazil,'new_cases']
 bra_total_cases = covid_data.loc[Brazil,'total_cases']
-
 plt.plot(bra_dates,bra_new_cases,'b-',label='New Cases')
 plt.plot(bra_dates, bra_total_cases, 'r-',label='Total Cases')
 plt.xticks(bra_dates.iloc[0:len(bra_dates):3],rotation=-90)
